@@ -425,7 +425,6 @@ const R = {
   novioDescripcion: [
     "Es divertido, inteligente y caballeroso 💜\nnos conocemos hace tiempo del grupo",
     "Jajaja qué querés que te diga\nme gusta mucho como persona\nes de los más buena onda que conozco",
-    "Savi es muy copado\njugamos a pokémon juntos y nos reímos demaciado jajaja\nes genial"
   ],
 
   novioPregunta: [
