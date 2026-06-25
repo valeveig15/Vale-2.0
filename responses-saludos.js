@@ -303,6 +303,4 @@ const SALUDOS = {
 };
 EOF
 echo "saludos.js: $(wc -w < /home/claude/vale-chat-github/responses-saludos.js) palabras"
-Salida
 
-saludos.js: 2048 palabras
