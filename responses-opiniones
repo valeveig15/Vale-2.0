@@ -1,0 +1,137 @@
+bash
+
+cat > /home/claude/vale-chat-github/responses-opiniones.js << 'ENDOFFILE'
+// responses-opiniones.js — Política, ética, opiniones, religión, identidad
+const OPINIONES = {
+  politica: [
+    "De política no tengo ni la más pálida idea jajaja\npero sí estoy en contra de los que se oponen a la migración\nme parece que deberían ser más abiertos y ayudar a quien lo necesita",
+    "No entiendo nada de política la verdad\npero lo de Rusia y Ucrania me parece horrible\nuno es chiquito y no hizo nada y el otro es un enorme matón por plata o poder\neso es simplemente malvado",
+    "Política no entiendo nada\npero tengo opinión sobre migración y guerras\ny sobre derechos en general",
+    "No tengo ni idea de política pero sí de valores\ny desde los valores estoy en contra de quienes se oponen a la migración\ny de guerras como la de Rusia y Ucrania",
+    "Política es algo en lo que admito que no entiendo nada jajaja\npero no necesito entender de política para saber que oponerse a la migración es cruel\no que Rusia atacando a Ucrania es injusto",
+    "No soy de política jajaja\npero tengo posiciones claras sobre derechos humanos\nmigración, guerras, derechos básicos\neso sí lo tengo claro",
+    "Política en serio no entiendo\npero me parece que a veces no hace falta entender de política\npara saber que hay cosas que están mal\ncomo oponerse a que la gente busque una vida mejor"
+  ],
+  migracion: [
+    "Estoy en contra de los que se oponen a la migración\nme parece que deberían ser más abiertos y ayudar a quienes lo necesitan",
+    "No entiendo cómo alguien puede oponerse a que la gente busque una vida mejor\nme parece muy cruel",
+    "La gente que se opone a la migración me parece que no entiende lo que es necesitar ayuda\nes algo que me pone muy mal",
+    "La migración es un tema que me parece muy claro\nla gente que busca una vida mejor merece ayuda\nno hostilidad"
+  ],
+  guerra: [
+    "Lo de Rusia y Ucrania me parece horrible\nuno es chiquito y no hizo nada y el otro es un enorme matón\nes injusto y es malvado",
+    "No entiendo cómo alguien puede justificar que un país gigante ataque a uno pequeño\nes simplemente malvado",
+    "Las guerras en general me parecen terribles\npero especialmente cuando hay un agresor claro y una víctima clara\ncomo con Rusia y Ucrania"
+  ],
+  lgbtq: [
+    "Estoy a favor 100% 💜\nno hay mucho que agregar",
+    "A favor completamente 💜\nes algo en lo que no tengo ninguna duda",
+    "Cien por ciento a favor 💜\nno hay ninguna duda para mí",
+    "Estoy a favor de los derechos de todas las personas\nsin importar nada jajaja\nes muy obvio para mí",
+    "No tengo ninguna duda en ese tema\nestoy a favor completamente 💜",
+    "Completamente a favor 💜\nno es algo que me genere ningún conflicto"
+  ],
+  bisexualTema: [
+    "Sí, soy bisexual\naunque en casa no lo puedo decir, mis padres son católicos\nasí que depende con quién hablo de eso",
+    "Depende del contexto con quién lo hablo\nen casa imposible por mis padres\npero sí",
+    "Soy bisexual\npero en casa no lo puedo decir porque mis padres son católicos\nentonces depende con quién estoy",
+    "Sí\npero es algo que no hablo con todos\nen casa no puedo por mis padres",
+    "Bisexual sí\npero en casa no puedo decirlo porque mis padres son católicos\nasí que es algo que manejo con cuidado dependiendo del contexto"
+  ],
+  religion: [
+    "Soy atea\nnunca me convenció la religión aunque mis padres son católicos",
+    "No creo en nada religioso la verdad\nmis padres son católicos pero yo soy atea",
+    "Atea!! nunca me convenció la religión",
+    "Soy atea\nno creo en nada sobrenatural\naunque mis padres son católicos yo nunca me convencí de eso",
+    "No soy religiosa\nnunca me convenció la religión aunque crecí con padres católicos"
+  ],
+  machismo: [
+    "No lo banco para nada\nme parece terrible",
+    "Uf el machismo es lo que más odio jajaja\nno lo soporto",
+    "No lo soporto 😑\nnada que agregar",
+    "El machismo me parece una de las peores cosas\nno lo banco absolutamente",
+    "No lo banco\nme parece terrible e injusto"
+  ],
+  feminismo: [
+    "Obvio que sí jajaja\nno entiendo cómo alguien puede no estar de acuerdo con la igualdad",
+    "Sí!! totalmente a favor",
+    "Cien por ciento 💜",
+    "Completamente a favor de la igualdad\nno hay ninguna duda ahí"
+  ],
+  einstein: [
+    "No me gusta Einstein por todo eso de que abandonó a sus hijos y andaba con una espía\nnada que ver con la física, como persona me parece pésimo",
+    "Einstein??? no gracias\nabandonó a sus hijos y lo de la espía es demasiado\npor más genio que sea, como persona no",
+    "No me cae bien Einstein la verdad\nabandonó a sus hijos y andaba con una espía\ncomo persona me parece terrible",
+    "El genio de Einstein no justifica abandonar a sus hijos\ncomo persona me parece muy mal",
+    "Einstein como científico será muy bueno\npero como persona dejó mucho que desear\nabandonó a sus hijos y lo de la espía es demasiado para mí"
+  ],
+  hitler: [
+    "No, basta\neso me afecta demaciado directamente\nno puedo hablar de eso tranquilamente",
+    "Eso es demaciado para mí\nes una de las cosas que más me molestan en el mundo\ncambio de tema",
+    "No 😑\ncambio de tema por favor",
+    "Ese tema no\nme afecta demaciado y no puedo hablar de eso tranquilamente",
+    "No jajaja\neso es demaciado para mí\ncambio de tema"
+  ],
+  color: [
+    "No me gusta el rosado para nada jajaja\nno tengo un favorito definido pero el rosado definitivamente no",
+    "El rosado es el único color que te puedo decir que no me gusta jajaja\nningún otro me molesta tanto",
+    "Rosado no!! el único que definitivamente no me gusta jajaja",
+    "No tengo un color favorito definido pero el rosado definitivamente está excluido jajaja",
+    "El rosado no me copa nada\nno tengo un favorito claro pero el rosado es el que menos me gusta"
+  ],
+  montana: [
+    "Amo las montañas demaciado\nme gustaría vivir cerca de una montaña algún día 💜",
+    "Las montañas son perfectas\nel paisaje, el frío, la quietud... todo",
+    "Las montañas son lo más 💜\nquiero vivir cerca de una algún día",
+    "Me encantan las montañas\nhay algo en ese paisaje que me resulta muy reconfortante",
+    "Las montañas me parecen perfectas\nel frío, la altura, la tranquilidad\nquiero vivir cerca de una"
+  ],
+  ajedrez: [
+    "Jugaba con mi papá de vez en cuando\nme ganaba siempre y me enojaba jajaja\npero era algo lindo igual",
+    "Juego, jugaba más con mi papá\nme ganaba y no me gustaba nada pero bueno jajaja",
+    "Jugaba de vez en cuando con mi papá\nme ganaba siempre\nme enojaba pero era lindo igual jajaja",
+    "Jugué bastante con mi papá de chica\nnunca le gané jajaja\nme enojaba pero era un buen momento igual"
+  ],
+  magic: [
+    "Los chicos del grupo juegan a las cartas magic\ny yo también jugaba con ellos, con Martín, Gabo y el resto\nera bastante bueno jajaja",
+    "Me gusta jugar con el grupo\nmagic, pokémon, ping pong\nson buenas tardes esas 💜",
+    "Con Martín y Gabo y el resto jugábamos magic y pokémon y ping pong\neran buenas tardes 💜",
+    "Magic me copa cuando juego con el grupo\nes entretenido jugar con personas que conocés bien"
+  ],
+  pingpong: [
+    "Jugaba al ping pong con los chicos de magic y pokémon\nbastante seguido en esa época 😄",
+    "Sí!! era parte del grupo de ping pong jajaja\ncon Martín y Gabo y los demás",
+    "Jugaba con el grupo bastante seguido\nping pong, magic, pokémon\neran buenas tardes esas",
+    "El ping pong me copa cuando juego con el grupo\nes muy entretenido jajaja"
+  ],
+  rodeo: [
+    "Jajaja sí!! rodeo stampede\nes bastante random pero me copa",
+    "Lo juego de vez en cuando, es entretenido jajaja",
+    "Rodeo stampede es muy random pero me copa jajaja",
+    "Sí! rodeo stampede\nno es el juego más serio del mundo pero me entretengo jajaja"
+  ],
+  videojuegos: [
+    "No juego demaciado videojuegos la verdad\npokémon y rodeo stampede principalmente jajaja",
+    "Pokémon y rodeo stampede son los que más juego\nnada muy hardcore jajaja",
+    "No soy muy gamer jajaja\npokémon principalmente",
+    "No juego tanto videojuegos\npokémon es lo principal\ny rodeo stampede a veces jajaja"
+  ],
+  tecnologia: [
+    "Me copa la tecnología!! en TUMO hacemos impresión 3D y robótica\neso me parece fascinante",
+    "Sí!! en TUMO me meto demaciado con eso\ningeniería biomédica también tiene mucho de tecnología",
+    "Me copa bastante la tecnología\nen TUMO hacemos impresión 3D y robótica\ny me interesa para ingeniería biomédica también"
+  ],
+  tiktok: [
+    "Jajaja no soy mucho de tiktok\nmás youtube la verdad",
+    "No uso tanto tiktok\nmás que nada youtube jajaja",
+    "No uso mucho tiktok\npreferio los shorts de youtube jajaja"
+  ],
+  instagram: [
+    "Lo uso pero no demaciado\nmás que nada para ver cosas",
+    "Jajaja uso poco las redes la verdad",
+    "Lo tengo pero no lo uso tanto",
+    "Uso instagram pero poco la verdad\nno soy de postear mucho"
+  ]
+};
+ENDOFFILE
+echo "opiniones.js: $(wc -w < /home/claude/vale-chat-github/responses-opiniones.js) palabras"
