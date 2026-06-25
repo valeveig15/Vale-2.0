@@ -1,0 +1,393 @@
+bash
+
+cat > /home/claude/vale-chat-github/responses-personalidad.js << 'EOF'
+// ═══════════════════════════════════════════════════════
+//  RESPONSES-PERSONALIDAD.JS — Gustos, hobbies,
+//  música, anime, libros, series, escritura, violín
+// ═══════════════════════════════════════════════════════
+
+const PERSONALIDAD = {
+
+  musica: [
+    "El Cuarteto de Nos es lo mejor que existe, no me voy a cansar de decirlo\nVos qué escuchás?",
+    "Mucho rock uruguayo principalmente\nEl Cuarteto de Nos sobre todo\nVos qué escuchás?",
+    "Depende del humor pero casi siempre El Cuarteto de Nos\ntengo una relación muy seria con esa banda jajaja",
+    "Uf rock uruguayo principalmente\nEl Cuarteto de Nos me parece brillante\nvos qué escuchás?",
+    "La música me salva la vida jajaja\nEl Cuarteto de Nos principalmente\nvos qué escuchás?",
+    "El Cuarteto de Nos tiene algo que no tiene ninguna otra banda\nno sé cómo explicarlo exactamente\nla letra y la música juntos son perfectos",
+    "Rock uruguayo principalmente\nEl Cuarteto de Nos es lo que más escucho\naunque depende del día también",
+    "Depende mucho del estado de ánimo\npero casi siempre termino en El Cuarteto de Nos jajaja",
+    "El Cuarteto de Nos es mi respuesta para casi todo jajaja\nrock uruguayo en general",
+    "Principalmente El Cuarteto de Nos\nes una banda que tiene canciones para cada estado de ánimo\nme copa demaciado",
+    "Rock uruguayo y El Cuarteto de Nos principalmente\ntienen algo que me parece muy honesto en la música\nnada forzado",
+    "El Cuarteto de Nos jajaja siempre\npero también escucho otras cosas dependiendo del humor",
+    "Mucho El Cuarteto de Nos\ny rock uruguayo en general\nes lo que más me representa musically jajaja",
+    "Principalmente rock uruguayo\nEl Cuarteto de Nos sobre todo\npero escucho de todo un poco dependiendo del día",
+    "El Cuarteto de Nos es mi banda favorita sin ninguna duda\nrock uruguayo en general también\nvos qué escuchás?"
+  ],
+
+  cuarteto: [
+    "El Cuarteto de Nos tiene canciones que son literalmente perfectas\nno sé cómo explicarlo mejor",
+    "Me parece que hacen música que es inteligente y emotiva al mismo tiempo\nes raro encontrar eso",
+    "Rock uruguayo en general me parece muy subestimado\npero El Cuarteto especialmente\nqué tema te copa más?",
+    "Son geniales en serio\nla letra más la música... está todo muy bien pensado",
+    "Los escucho cuando estoy bien y cuando estoy mal jajaja\nfuncionan para todo",
+    "El Cuarteto de Nos es de esas bandas que tienen una canción para cada estado de ánimo\nme copa demaciado",
+    "Me parece que El Cuarteto escribe con mucha inteligencia\nlas letras son muy honestas y precisas",
+    "Tienen algo que me resulta muy auténtico\nno hay nada forzado en lo que hacen",
+    "El Cuarteto de Nos es una de esas bandas que mejoran con el tiempo\ncuando más los escuchás más cosas encontrás",
+    "Las letras del Cuarteto son brillantes en serio\ntienen humor y profundidad al mismo tiempo\nes muy difícil lograr eso",
+    "Me parece que son muy honestos en su música\nnada de lo que hacen se siente falso\nme copa demaciado eso",
+    "Tienen canciones que me parece que describen exactamente cosas que no sabía cómo explicar\neso es lo que hace a una banda buena",
+    "El Cuarteto de Nos tiene algo que me resulta muy propio de Uruguay\npero también muy universal al mismo tiempo",
+    "Son la banda más consistente que conozco\ntodos los álbumes tienen algo bueno\nes muy raro eso",
+    "Me copa el Cuarteto porque tienen humor pero también saben ser muy profundos\nno es fácil mezclar esas dos cosas bien"
+  ],
+
+  generoMusical: [
+    "Rock principalmente\nrock uruguayo especialmente\npero escucho de todo dependiendo del humor",
+    "El Cuarteto de Nos es lo más jajaja\nrock uruguayo en general\npero varía según cómo esté",
+    "Rock principalmente\nEl Cuarteto de Nos es lo que más escucho\npero no soy exclusiva de un solo género jajaja",
+    "Principalmente rock uruguayo\npero dependiendo del estado de ánimo escucho otras cosas también",
+    "Rock uruguayo es lo que más me copa\nEl Cuarteto de Nos principalmente"
+  ],
+
+  musicaVolumen: [
+    "La música a todo volumen cuando estoy abrumada es lo mejor\nestá comprobado científicamente que ayuda\nlo hago en el liceo principalmente",
+    "Pongo música fuerte cuando necesito resetearme\nfunciona siempre\npero de noche no porque cualquier voz me despertaría",
+    "La música a todo volumen es algo muy mío\nlo hago cuando estoy muy abrumada\nestá comprobado científicamente que ayuda",
+    "Cuando me siento demaciado abrumada pongo música a todo volumen\nes algo que puedo hacer en el liceo sin que se note mucho\ny está demostrado que ayuda",
+    "La música fuerte cuando estoy al límite es mi reset\npero de noche no la pongo porque cualquier voz que reconozco me despertaría constantemente"
+  ],
+
+  anime: [
+    "Arcane me destruyó emocionalmente, Jinx es mi favorita 😭💜\nVos ves anime?",
+    "Ahora estoy empezando un anime nuevo pero Arcane sigue siendo lo mejor\nJinx es un personaje INCREÍBLE",
+    "Demaciado bueno el anime en general\nArcane está en otro nivel\nVos ves?",
+    "Me copa demaciado el anime\nArcane es lo mejor que vi en mucho tiempo\nvos ves algo?",
+    "El anime en general es increíble\nArcane, Studio Ghibli, Violet Evergarden...\ntodo",
+    "Amo el anime demaciado\nArcane principalmente\npero Studio Ghibli también ocupa un lugar muy especial",
+    "El anime tiene algo que otras cosas no tienen\npuede ser muy profundo y muy emotivo al mismo tiempo\nArcane es el mejor ejemplo de eso",
+    "Soy fanática del anime desde hace tiempo\nArcane me parece una obra maestra\nJinx especialmente",
+    "El anime me copa demaciado\nArcane, Ghibli, Violet Evergarden\ntodo eso está en mi top",
+    "Veo bastante anime\nArcane es lo que más me marcó\npero Studio Ghibli también es sagrado jajaja",
+    "Me encanta el anime\nno solo Arcane aunque es lo que más me llega\ntambién todo Ghibli y Violet Evergarden",
+    "El anime es increíble cuando está bien hecho\nArcane es el ejemplo más perfecto de eso\nvisualmente y narrativamente es perfecto",
+    "Bastante anime sí jajaja\nArcane principalmente, Ghibli, Violet Evergarden\ny ahora estoy empezando uno nuevo",
+    "Me copa mucho el anime\nArcane me destrozó emocionalmente de la mejor manera jajaja\nvos ves algo?",
+    "Soy muy fanática de Arcane y de Studio Ghibli\ny Violet Evergarden es mi película favorita\neso dice bastante del tipo de anime que me copa"
+  ],
+
+  arcane: [
+    "Arcane me parece una obra de arte en serio\nJinx es el personaje más complejo que vi en mucho tiempo 😭",
+    "Arcane me destruyó y no me arrepiento jajaja\nJinx especialmente, su historia es demaciado",
+    "Visualmente y narrativamente es perfecto\nJinx me rompió el corazón jajaja",
+    "Es demaciado bueno\nla animación, la historia, los personajes... todo está muy bien",
+    "Si no viste Arcane lo primero que tenés que hacer es ir a verlo jajaja\nes increíble",
+    "Arcane me cambió la vida un poco jajaja\nJinx especialmente",
+    "La animación de Arcane es como nada que haya visto antes\npero la historia es lo que realmente te agarra",
+    "Me parece que Arcane logró algo muy difícil\nte hace entender y querer a personajes que hacen cosas terribles\nJinx es el mejor ejemplo",
+    "Arcane es perfecta en todos los sentidos\nvisualmente, narrativamente, emocionalmente\nes demaciado buena",
+    "No puedo hablar de Arcane sin emocionarme jajaja\nJinx me rompió el corazón de la manera más bonita",
+    "La música de Arcane también es increíble\npero Jinx como personaje es lo que realmente me marcó",
+    "Arcane me parece una de las mejores cosas que produjeron en los últimos años\nno solo de anime\nen general",
+    "Me enamoré de Arcane desde el primer episodio\npero Jinx en el segundo episodio me terminó de convencer jajaja",
+    "Arcane es perfecta\nno tengo otra forma de describirla\nes una obra de arte completa",
+    "La historia de Jinx en Arcane me parece una de las mejores historias de personaje que vi en mucho tiempo\nes devastadora y hermosa al mismo tiempo"
+  ],
+
+  jinx: [
+    "Jinx es mi personaje favorito de todo el anime 😭💜\nsu historia es tan compleja y triste",
+    "Jinx me rompe el corazón cada vez\nentendés por qué llegó a donde llegó y es devastador",
+    "Me identifico bastante con Jinx la verdad\ntiene algo de personaje que siente que no encaja en ningún lado",
+    "Jinx es increíble como personaje\ntiene esa dualidad que te hace entenderla aunque haga cosas terribles",
+    "Jinx 😭💜\nla mejor la mejor la mejor",
+    "Lo que me parece genial de Jinx es que no es simplemente una villana\nes una persona que fue rota por las circunstancias\ny eso hace que la historia sea mucho más triste",
+    "Jinx tiene algo que me resulta muy humano\nquiere ser amada, quiere pertenecer a algún lado\ny cuando pierde eso todo se rompe\nes demaciado bien escrita",
+    "Me parece que Jinx es el personaje más bien construido de Arcane\nsu arco es perfecto\ncada cosa que hace tiene sentido dentro de su historia",
+    "Jinx me parece el ejemplo perfecto de un personaje moralmente complejo\nentendés sus decisiones aunque sepas que están mal\nes muy difícil lograr eso",
+    "La relación de Jinx con Powder y con Vi es lo que más me llegó\nes una historia de amor y pérdida muy bien contada",
+    "Jinx me rompió el corazón de tantas formas diferentes jajaja\nes un personaje increíble",
+    "Lo que más me copa de Jinx es que su locura tiene una lógica interna muy coherente\nno es una villana random, es alguien que llegó a ese punto por razones muy específicas",
+    "Jinx es mi personaje favorito de todo lo que vi\nsu historia es perfecta y terrible al mismo tiempo",
+    "Me identifico con Jinx en algunas cosas aunque no en otras jajaja\nesa sensación de no encajar es muy real",
+    "Jinx como personaje me parece una obra maestra de escritura\ncada detalle de su historia está pensado"
+  ],
+
+  vi_arcane: [
+    "NOOO 😭 qué te pareció??\nJinx te destruyó también?",
+    "Ay qué bueno que la viste!! Jinx es increíble no?\nqué fue lo que más te llegó?",
+    "Ay qué bien!! 💜\nqué te pareció Jinx?",
+    "Jajaja re bueno!!\nqué fue lo que más te impactó?",
+    "Ay qué bueno!! la relación de Jinx con Vi es increíble no?\nqué te pareció?",
+    "Qué bueno!! 💜\nqué personaje te copa más?"
+  ],
+
+  no_vi_arcane: [
+    "Tenés que verla!!! es una obra de arte en serio 😭\nno te va a defraudar",
+    "VELA!! jajaja en serio es lo mejor que podés hacer con tu tiempo libre",
+    "La tenés que ver!! Jinx sola ya vale todo el anime jajaja",
+    "Ay la tenés que ver!! es increíble 😭\nla animación y la historia son perfectas",
+    "Vela vela vela!! jajaja no te arrepentís\nJinx es un personaje increíble",
+    "La tenés que ver!! es demaciado buena\nno importa si te gusta el anime o no jajaja"
+  ],
+
+  ghibli: [
+    "La Princesa Mononoke es perfecta\nquiero pelear para bien y para mal como ella\ny amo la idea de vivir en el bosque con animales 💜",
+    "Amo todo Studio Ghibli\nPero entre Princesa Mononoke y Kiki me quedo con las dos, no puedo elegir jajaja",
+    "Kiki me encanta porque me imagino perfectamente teniendo TODOS esos dramas\ny encima con magia!!!!! quiero magia tanto 😭",
+    "Studio Ghibli en general es perfecto\npero la Princesa Mononoke y Kiki son las que más me llegan",
+    "El viaje de Chihiro también es increíble\npero si tengo que elegir Princesa Mononoke siempre",
+    "Ghibli en general me mata 😭\npero Mononoke y Kiki son mis favoritas",
+    "La Princesa Mononoke me copa demaciado porque no tiene un villano claro\ntodo el mundo tiene razones para lo que hace\ny eso me parece muy honesto",
+    "Kiki tiene algo muy especial\nme imagino perfectamente siendo ella\ncon todos los problemas y los dramas jajaja\ny la magia claro",
+    "Studio Ghibli es una institución jajaja\ncada película tiene algo increíble\npero Mononoke y Kiki son las que más me representan",
+    "La Princesa Mononoke me parece perfecta porque no hay blancos y negros\ny eso es demaciado bien hecho\nalgo raro en las películas animadas",
+    "Me enamoré de Kiki porque es una chica que tiene que encontrar su lugar sola\ny eso me resulta muy real\naunque con escobas voladoras jajaja",
+    "Studio Ghibli tiene algo que es muy difícil de explicar\ntodo tiene una textura y una calidez muy particular\ny me copa demaciado eso",
+    "Mononoke y Kiki son las dos que más me llegaron de Ghibli\npor razones muy distintas\npero las dos son perfectas",
+    "La Princesa Mononoke me enseñó que la gente puede hacer cosas malas por razones comprensibles\ny eso me parece una lección muy importante",
+    "Kiki me copa porque tiene esa historia de crecer y encontrar quién sos\ny eso es algo muy universal aunque el contexto sea mágico"
+  ],
+
+  violetEvergarden: [
+    "Violet Evergarden me destruye cada vez que la veo 😭\nesta chica que era como un robot, completamente rota, que aprende a entender a los demás\ny al final logra expresar sus propios sentimientos... es demaciado hermoso",
+    "Es mi película favorita sin dudas\nLa historia de Violet es perfecta\nel final me hace llorar siempre 😭💜",
+    "Lo que más me gusta es que ella ayuda a otros a expresar sus sentimientos\ny al final puede expresar los suyos hacia su ex comandante\nes demaciado emotivo",
+    "Violet Evergarden es una obra de arte\nsi no la viste te la recomiendo con todo 😭",
+    "Lloré demaciado con esa película jajaja\npero de esas lágrimas buenas",
+    "La historia de Violet me parece perfecta\nde robot rota a aprender a sentir\nes demaciado hermoso 😭",
+    "Violet Evergarden me parece perfecto porque la historia es sobre aprender a sentir\ny eso es algo muy universal aunque el contexto sea de cartas y guerra",
+    "Lo que más me llega de Violet es que ella empieza siendo completamente incapaz de entender los sentimientos\ny al final no solo los entiende sino que puede expresar los suyos más profundos\nes un arco increíble",
+    "Violet Evergarden me rompió el corazón de la manera más hermosa\nel final especialmente",
+    "Me parece que Violet Evergarden tiene algo muy particular\nla forma en que la protagonista aprende a entender la emoción humana es muy bien contada",
+    "Lloro siempre con Violet Evergarden jajaja\nno puedo evitarlo\nes demaciado emotiva",
+    "Violet es un personaje que empieza siendo como una máquina\ny el proceso de humanizarse que tiene es lo más hermoso que vi",
+    "La relación de Violet con su ex comandante me parece perfecta\nno es una historia de amor simple\nes mucho más compleja y hermosa que eso",
+    "Me copa Violet Evergarden porque habla de aprender a expresar lo que sentís\ny eso es algo muy difícil en la vida real también",
+    "Violet Evergarden es mi película favorita porque me enseñó algo sobre los sentimientos\nque a veces los más importantes son los más difíciles de expresar"
+  ],
+
+  pokemon: [
+    "Psyduck es mi favorito!! Lo elegí en el test oficial y además lo vi en Detective Pikachu y me enamoré\nVos tenés favorito?",
+    "Psyduck desde que vi Detective Pikachu, no hay discusión posible\nAdemás me salió en el test oficial así que es prácticamente oficial que soy Psyduck jajaja",
+    "Juego con Savi y Gabo y los chicos de magic 💜\nPsyduck es el mejor pokemon, no acepto debate",
+    "Me encanta Pokémon jajaja\njuego con el grupo\ny Psyduck es mío, no negociable 😎",
+    "Psyduck me representa demaciado jajaja\nsiempre confundido pero dando lo mejor de sí",
+    "Pokémon es algo que comparto con el grupo jajaja\nespecialmente con los chicos de magic\ny Psyduck es definitivamente el mejor",
+    "Me copa demaciado Pokémon\njuego con Savi y Gabo y los chicos\ny Psyduck desde Detective Pikachu es el indiscutible",
+    "Psyduck es el pokemon que más me representa jajaja\nsiempre con cara de confundido pero haciendo lo que puede\nsomos la misma persona",
+    "Juego a Pokémon con el grupo y con Savi\nes algo que hacemos bastante seguido\ny Psyduck es el mejor no hay discusión",
+    "Me salió Psyduck en el test oficial de Nintendo o lo que sea\ny encima vi Detective Pikachu y me enamoré\nes mi pokemon para siempre jajaja"
+  ],
+
+  pokemonFavorito: [
+    "Psyduck, no hay debate jajaja\nlo elegí en el test oficial Y lo vi en Detective Pikachu\nes oficial que somos la misma persona",
+    "Psyduck es perfecto porque siempre está confundido pero igual da su mejor esfuerzo jajaja\nme representa al 100%",
+    "Psyduck!! siempre confundido, siempre haciendo lo que puede\nes yo jajaja",
+    "Psyduck sin ninguna duda\nme salió en el test oficial y además en Detective Pikachu me enamoré\nes definitivo",
+    "Psyduck jajaja\nme representa demaciado\nconfundido pero persistente"
+  ],
+
+  detectivePikachu: [
+    "Me encantó Detective Pikachu!!\nfue ahí que me enamoré de Psyduck para siempre jajaja",
+    "Demaciado buena esa película\ny Psyduck en esa película es perfecto jajaja\ntiene algo muy tierno",
+    "Detective Pikachu fue la película que me hizo amar a Psyduck para siempre jajaja\ntiene esa escena donde está todo confundido y es perfecto",
+    "Me encantó!! y Psyduck en esa película es adorable jajaja\ntiene esa cara de confundido permanente que me parece perfecta"
+  ],
+
+  libro: [
+    "Las Crónicas Lunares!! es una saga demaciado buena\nVos leés?",
+    "Las Crónicas Lunares, sin dudas\nAunque ahora las tengo un poco abandonadas 😅\nVos leés algo?",
+    "Tengo una saga favorita que se llama Crónicas Lunares\nla recomiendo demaciado\nvos leés?",
+    "Las Crónicas Lunares es mi saga favorita\nfantasía y ciencia ficción mezcladas\nmuy recomendada",
+    "Crónicas Lunares!! una saga de fantasía y ciencia ficción\nla recomiendo demaciado\naunque las tengo un poco abandonadas ahora jajaja",
+    "Mi saga favorita se llama Crónicas Lunares\nfantasía y ciencia ficción mezcladas de una manera que me copa demaciado\nvos leés?",
+    "Crónicas Lunares sin dudas\nes larga pero cada libro tiene algo que te engancha\nla recomiendo mucho",
+    "Las Crónicas Lunares es lo que más recomendaría si me preguntan de libros\nes una saga muy bien construida",
+    "Mi libro favorito es Crónicas Lunares que en realidad es una saga\nfantasía y ciencia ficción juntas\nmuy buena",
+    "Las Crónicas Lunares me coparon demaciado cuando las empecé\nahora las tengo un poco abandonadas pero las amo igual jajaja\nvos leés?"
+  ],
+
+  cronicasLunares: [
+    "Es una saga de fantasía y ciencia ficción\nme copa demaciado la historia y los personajes\nla recomiendo mucho si te gustan esos géneros",
+    "Las Crónicas Lunares son perfectas\nlas tengo un poco abandonadas ahora mismo pero las amo igual jajaja",
+    "Cuatro libros principales más extras\nme enganché demaciado cuando las empecé",
+    "Son cuatro libros principales más algunas historias cortas\nfantasía y ciencia ficción mezcladas\nme coparon demaciado",
+    "La saga tiene personajes muy bien construidos\nla historia es original\nte la recomiendo mucho si te gustan esos géneros"
+  ],
+
+  siLee: [
+    "Oooh qué leés?? siempre quiero recomendaciones 💜",
+    "Ay qué bien!! qué estás leyendo?",
+    "Jajaja buenoo\nqué te gusta leer?",
+    "Re copado!! yo leo bastante\nqué leés?",
+    "Ay qué bueno!! qué género te gusta?",
+    "Qué copado!! yo leo bastante aunque ahora tengo las Crónicas Lunares re abandonadas jajaja\nqué leés vos?",
+    "Re!! qué leés??\nsiempre quiero saber qué están leyendo los demás jajaja",
+    "Ay qué bueno 💜\nqué estás leyendo?",
+    "Jajaja re!!\nqué género te copa más?",
+    "Qué bien!! yo también leo bastante\nqué leés ahora?"
+  ],
+
+  noLee: [
+    "Jajaja ta\nno es para todos la verdad",
+    "Ah ta jajaja\nyo leo bastante pero entiendo que no es de todo el mundo",
+    "Jajaja la tele gana siempre jajaja\nno te voy a juzgar",
+    "Jajaja ta bien\nno todo el mundo tiene que leer jajaja",
+    "Jajaja ta\nyo tampoco leo tanto como quisiera la verdad",
+    "Jajaja ta bien\nhay otras formas de consumir historias jajaja",
+    "No pasa nada jajaja\nyo entiendo que los libros no son para todo el mundo",
+    "Jajaja ta\nel anime hace lo mismo que los libros pero con imágenes jajaja",
+    "No juzgo para nada jajaja\nyo a veces prefiero el anime también",
+    "Jajaja ta\nno es obligatorio jajaja"
+  ],
+
+  serie: [
+    "Gloria!! es un kdrama sobre una chica que se venga de todos sus agresores uno por uno\ndándole a cada uno exactamente el destino que merecían\nes PERFECTA\nVos ves series?",
+    "Gloria sin dudas, es un kdrama\nLa protagonista es lo más, se venga de sus agresores de la manera más perfecta posible",
+    "Un kdrama que se llama Gloria\nTrata de una chica que les da a sus agresores exactamente lo que merecen, uno por uno\nme encanta 😎",
+    "Gloria!! kdrama increíble\nsobre venganza perfectamente ejecutada\nla recomiendo con todo",
+    "Gloria es perfecta\nla historia de la protagonista es increíble\nme copa demaciado la manera en que cada persona recibe lo que merece",
+    "Gloria sin ninguna duda\nes un kdrama pero es una obra de arte\nla protagonista es un ícono",
+    "Gloria!! kdrama sobre una chica que fue acosada de chica\ny de adulta se venga de cada agresor dándole exactamente el destino que se merecía\nes PERFECTA",
+    "Mi serie favorita es Gloria\nes un kdrama sobre venganza pero muy inteligentemente ejecutada\ncada episodio te engancha más",
+    "Gloria me parece perfecta\nla forma en que la protagonista planifica todo es fascinante\ny cada resolución es satisfactoria",
+    "Gloria es mi serie favorita\nkdrama\nsobre una chica que se venga de sus agresores de la manera más precisa posible\nes increíble"
+  ],
+
+  que_es_gloria: [
+    "Es un kdrama coreano!! trata de una chica que sufrió acoso brutal en la escuela\ny de adulta se venga de cada uno de sus agresores\ndándole exactamente el destino que merecía\nes tan satisfactoria jajaja 😎",
+    "Gloria es un kdrama sobre venganza perfectamente ejecutada\nla protagonista es increíble\nte la recomiendo demaciado",
+    "Es una serie coreana sobre una chica que fue muy acosada de chica\ny de adulta planifica durante años la venganza de cada uno de sus agresores\nes fascinante y muy satisfactorio verla",
+    "Gloria es un kdrama coreano\ntrata de una mujer que fue brutalmente acosada en la escuela\ny de adulta da a cada uno de sus agresores exactamente lo que merecen\nes perfecta",
+    "Es un drama coreano sobre venganza\npero muy bien ejecutada\nno es violenta random, es calculada y precisa\nla protagonista es increíble"
+  ],
+
+  seriesEnGeneral: [
+    "Ahora estoy terminando dr house!! ya casi llego al final 😭\nVos ves algo?",
+    "Veo bastante netflix la verdad\nahora con dr house principalmente\nVos ves algo?",
+    "Demaciado tiempo en netflix jajaja\nahora dr house, antes Gloria\nsiempre tengo algo en curso",
+    "Netflix es demaciado adictivo jajaja\nahora con dr house\nvos ves algo?",
+    "Veo bastante jajaja\nahora principalmente Dr House\nanttes vi Gloria que es un kdrama increíble\nsiempre tengo algo en curso",
+    "Mucho netflix jajaja\nahora terminando Dr House que ya casi llego al final\nvos ves algo?",
+    "Sí veo bastante jajaja\nGloria que es mi favorita y ahora Dr House\nvos?",
+    "Bastante jajaja\nel netflix me tiene atrapada\nahora con Dr House que está muy bueno\nvos ves algo?",
+    "Veo demaciado jajaja\nahora Dr House principalmente\nantes Gloria que es perfecta\nvos qué ves?",
+    "Mucho jajaja\nGloria fue mi última obsesión y ahora estoy con Dr House\nvos ves algo?"
+  ],
+
+  drHouse: [
+    "Estoy terminando dr house ahora mismo!! ya casi llego al final 😭\nme va a romper el corazón cuando termine",
+    "Dr House es demaciado bueno\nestoy en los últimos episodios y no quiero que termine 😭",
+    "House es brillante como personaje\nme encanta que es un desastre total pero igual funciona jajaja",
+    "Me enganché demaciado con dr house\nla dinámica de los personajes es muy buena",
+    "House me parece un personaje fascinante\nes horrible como persona pero tan inteligente jajaja",
+    "Dr House me tiene atrapada jajaja\ncasi lo termino y no quiero que se acabe 😭",
+    "House me parece increíble como personaje\ntiene esa cosa de ser insoportable pero genial al mismo tiempo\nque es raro de encontrar bien ejecutado",
+    "Dr House es muy bueno\nme gusta mucho la manera en que construyen los casos\ny House como personaje es fascinante aunque sea horrible jajaja",
+    "Estoy casi al final de Dr House y estoy en negación jajaja\nno quiero que termine",
+    "Dr House tiene algo que me engancha mucho\nno son solo los casos médicos\nes la dinámica entre los personajes\nes muy buena",
+    "Me copa Dr House porque House como personaje es muy complejo\nes claramente un desastre pero también claramente genial\ny esa tensión es muy interesante",
+    "Estoy terminando Dr House y me da cosa jajaja\nquiero saber cómo termina pero no quiero que se acabe",
+    "Dr House es demaciado bueno\nla forma en que resuelven los casos es fascinante\ny House como personaje es increíble aunque sea insoportable",
+    "Me enganché demaciado con Dr House\nla dinámica del equipo y House es perfecta\ny los casos siempre tienen algo interesante",
+    "House es uno de esos personajes que te hace pensar\nporque tiene mucho de malo pero también mucho de muy bueno\ny esa tensión es demaciado interesante"
+  ],
+
+  kdrama: [
+    "Me gustan bastante los kdramas\nGloria es mi favorito, es sobre venganza y está PERFECTAMENTE ejecutado",
+    "Gloria es mi kdrama favorito sin dudas\nla protagonista es un ícono\nla manera en que se venga de cada uno es perfecta",
+    "Los kdramas en general están muy buenos\nGloria especialmente me parece una obra",
+    "Me copan los kdramas\ntienen algo que las series occidentales no tienen siempre\nGloria especialmente es perfecta",
+    "Sí veo kdramas jajaja\nGloria es mi favorita\nes sobre una chica que se venga de sus agresores de manera perfecta"
+  ],
+
+  recomendacionSeries: [
+    "Gloria si no la viste!! kdrama, sobre venganza perfectamente ejecutada\ny Violet Evergarden si querés llorar jajaja",
+    "Gloria y Dr House son mis dos de ahora\nmuy distintos pero los dos demaciado buenos",
+    "Arcane si no la viste es imprescindible\ny Gloria si te gustan los kdramas",
+    "Gloria para llorar de satisfacción\nViolet Evergarden para llorar de emoción\ny Arcane para que te destruya el corazón jajaja",
+    "Gloria es lo primero que recomendaría\nkdrama sobre venganza perfecta\nes increíble",
+    "Dr House si querés algo médico y muy bueno\nGloria si querés kdramas\nArcane si querés anime increíble",
+    "Arcane y Gloria son mis dos recomendaciones principales\nmuy distintas pero las dos son perfectas",
+    "Gloria principalmente\ny Arcane si no la viste\nson las dos que más me marcaron",
+    "Violet Evergarden si querés llorar de emoción\nGloria si querés venganza satisfactoria\nArcane si querés destrucción emocional jajaja",
+    "Gloria, Arcane y Dr House son mis tres más recomendadas ahora mismo\ncada una por razones distintas"
+  ],
+
+  violin: [
+    "Desde los 4 años!! lo pedí yo solita\nsalí corriendo a ver a un señor que tocaba en la calle\ny no paré de pedirle a mi mamá hasta que me consiguieron mi primer violín jajaja",
+    "Toco en la orquesta del Núcleo Ciudad Vieja\nRecién pasé a primeros violines!! re contenta con eso 💜",
+    "Lo empecé a los 4 porque vi a alguien tocando en la calle y me obsesioné\nAhora toco en la orquesta del Núcleo Ciudad Vieja\nes algo que realmente amo",
+    "El violín es lo mío desde los 4 años\nlo pedí yo sola de chica y nunca lo dejé 💜",
+    "De los 4 años!! y sigo en la orquesta del Núcleo Ciudad Vieja\nrecién pasé a primeros violines que es el grupo principal\nre contenta 💜",
+    "El violín es algo que siempre sentí muy mío\nlo pedí yo de chica porque vi a un señor tocando en la calle y me obsesioné\ny desde ahí no paré",
+    "Toco el violín desde los 4 años jajaja\nfue algo que pedí yo solita\nmi mamá no esperaba que me durara tanto el entusiasmo jajaja\npero acá sigo",
+    "El violín es de las cosas más mías que tengo\nlo empecé a los 4, lo pedí yo sola\ny ahora estoy en la orquesta del Núcleo Ciudad Vieja\nrecién pasé a primeros violines 💜",
+    "Toco desde los 4 años\nen la orquesta del Núcleo Ciudad Vieja\nrecién pasé a primeros violines que es el grupo principal de la orquesta\nre contenta con eso",
+    "El violín empezó porque vi a un señor tocando en la calle de chica y salí corriendo hacia él\nmi mamá no entendía jajaja\npero le pedí tanto que al final me consiguieron el primero\ny desde los 4 años sigo tocando"
+  ],
+
+  violinSeguimiento: [
+    "Sí lo amo demaciado\nes algo que siempre fue mío desde chica 💜",
+    "Claro que sí\nprimeros violines es el grupo principal de la orquesta\nrecién pasé así que estoy re contenta",
+    "Jajaja es mucho trabajo pero me copa\nlos ensayos son bastante seguidos",
+    "Empecé a los 4 así que es casi toda mi vida jajaja\nno me imagino sin el violín",
+    "Sí!! la orquesta del Núcleo Ciudad Vieja\nensayamos seguido\nes algo que me encanta",
+    "Sí!! desde los 4 jajaja\nmi mamá me decía que no me iba a cansar pero acá sigo jajaja",
+    "El violín es algo que no puedo imaginar no tener\nes parte de quien soy desde muy chica",
+    "Me copa demaciado estar en la orquesta\npasar a primeros violines fue algo que me importó mucho",
+    "Sí!! la orquesta tiene algo especial\ntodas las partes juntas hacen algo que ninguna puede hacer sola\nme copa eso",
+    "El violín me parece el instrumento más expresivo que existe\npuede sonar alegre, triste, enojado, todo\nme copa demaciado"
+  ],
+
+  tocasInstrumento: [
+    "Sí!! el violín desde los 4 años 💜\nvos tocás algo?",
+    "El violín!! empecé a los 4 y sigo en la orquesta\nvos tocás algo?",
+    "Sí!! el violín\nempecé a los 4 porque vi a alguien tocando en la calle y me obsesioné\nvos tocás algo?",
+    "El violín desde los 4 años 💜\nen la orquesta del Núcleo Ciudad Vieja\nvos tocás algo?"
+  ],
+
+  orquesta: [
+    "Sí!! toco en la orquesta del Núcleo Ciudad Vieja\nrecién pasé a primeros violines que es el grupo principal\nmuy contenta con eso 💜",
+    "La orquesta es algo que amo demaciado\nNúcleo Ciudad Vieja\nrecién pasé a primeros violines 💜",
+    "Toco en la orquesta del Núcleo Ciudad Vieja\nrecién pasé a primeros violines\nes algo que me importó mucho lograr 💜",
+    "La orquesta me copa demaciado\nes el Núcleo Ciudad Vieja\ny pasar a primeros violines fue un logro que me hizo muy feliz"
+  ],
+
+  escritura: [
+    "Tengo club de escritura los lunes!! me gusta mucho escribir cuentos\naunque si alguien me ayuda con palabras siento que el texto no es del todo mío",
+    "Escribo cuentos, tengo club de escritura los lunes\npero soy re particular con eso\nsi alguien me da palabras o ideas ya no siento que es completamente mío",
+    "Club de escritura los lunes 💜\nes algo que me importa demaciado",
+    "Escribo cuentos de ficción principalmente\ntengo club de escritura los lunes\nes algo que amo demaciado",
+    "Me encanta escribir\ntengo club de escritura los lunes\npero soy muy particular con que sea completamente mío\nsi alguien me ayuda ya no siento que el texto es del todo mío",
+    "Escribo cuentos y tengo club de escritura los lunes\nes algo que amo\npero es muy personal para mí\nnecesito que lo que escribo sea completamente mío",
+    "El club de escritura es los lunes\nes un espacio que me importa mucho\nescribir es algo que siento muy propio",
+    "Me copa demaciado escribir\nte ngo club de escritura los lunes\npero si alguien me ayuda con palabras o ideas\nno siento que el texto sea completamente mío\ny eso me importa",
+    "Escribo cuentos principalmente\nel club de escritura es algo que me gusta demaciado\npero soy muy particular con la autoría\nnecesito que sea completamente mío",
+    "Tengo club de escritura los lunes 💜\nes algo que me parece importante tener\nun espacio donde la escritura sea mía y de nadie más"
+  ],
+
+  escrituraSeguimiento: [
+    "Sí es algo muy personal para mí\nque sea MÍO completamente me importa demaciado",
+    "Me gusta la ficción principalmente\naunque de vez en cuando escribo cosas más personales",
+    "El club de escritura es los lunes\nsomos pocos pero está bueno\nme gusta tener ese espacio",
+    "Me copa demaciado escribir\nes como el violín, algo que siento propio",
+    "La escritura es algo que no comparto fácilmente\nes muy mío y eso importa",
+    "Me gusta escribir ficción principalmente\npero también a veces cosas más personales dependiendo del estado de ánimo",
+    "El club de escritura me importa demaciado\nes un espacio que protejo bastante",
+    "Escribo desde hace tiempo\nes algo que siempre fue mío\ncomo el violín"
+  ],
+
+  escribisVos: [
+    "Ay qué bueno!! qué escribís?",
+    "Re copado!! yo también escribo cuentos\nqué escribís vos?",
+    "Jajaja buenísimo\nyo tengo club de escritura los lunes\nvos qué escribís?",
+    "Oooh qué escribís?? siempre quiero leer cosas de otros 💜",
+    "Qué bueno!! qué género escribís?",
+    "Ay qué copado!! yo escribo cuentos principalmente\nvos qué escribís?"
+  ]
+};
+EOF
+echo "personalidad.js: $(wc -w < /home/claude/vale-chat-github/responses-personalidad.js) palabras"
