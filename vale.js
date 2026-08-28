@@ -1,4 +1,4 @@
-cat > /home/claude/vale-chat-github/vale.js << 'ENDOFFILE'
+
 // ═══════════════════════════════════════════════════════════════
 //  VALE.JS — Motor de conversación de Valentina Veiga
 //  Versión ULTRA MASIVA. Sin API. Todo adentro.
@@ -1563,5 +1563,4 @@ inputEl.addEventListener('input', () => {
   inputEl.style.height = 'auto';
   inputEl.style.height = inputEl.scrollHeight + 'px';
 });
-ENDOFFILE
-echo "done: $(wc -l < /home/claude/vale-chat-github/vale.js) lineas"
+
