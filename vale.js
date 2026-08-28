@@ -1,4 +1,3 @@
-
 // ═══════════════════════════════════════════════════════════════
 //  VALE.JS — Motor de conversación de Valentina Veiga
 //  Versión ULTRA MASIVA. Sin API. Todo adentro.
@@ -1563,4 +1562,3 @@ inputEl.addEventListener('input', () => {
   inputEl.style.height = 'auto';
   inputEl.style.height = inputEl.scrollHeight + 'px';
 });
-
